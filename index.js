@@ -66,7 +66,7 @@ app.use(express.static(path.join(__dirname, "web")));
     res.sendFile(path.join(__dirname, "web", "index.html"));
   });
 
-  server.listen(port, "172.31.47.29", function () {
+  server.listen(port, "0.0.0.0", function () {
     console.log("App running on *: " + port);
   });
 })();
