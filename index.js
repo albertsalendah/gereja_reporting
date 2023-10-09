@@ -29,6 +29,7 @@ const data_informasi_gereja = require("./routes/informasi_gereja");
 const data_dashboard = require("./routes/dashboard");
 const laporan_data_jemaat = require("./routes/laporan/laporan_data_jemaat");
 const laporan_data_keluarga = require("./routes/laporan/laporan_data_keluarga");
+const statusJemaat = require("./routes/status_jemaat");
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -60,6 +61,7 @@ app.use(express.static(path.join(__dirname, "web")));
   app.use("/", data_dashboard);
   app.use("/", laporan_data_jemaat);
   app.use("/", laporan_data_keluarga);
+  app.use("/", statusJemaat);
 
   // Catch-all route to serve the Flutter web app's main HTML file
   app.get("*", (req, res) => {
