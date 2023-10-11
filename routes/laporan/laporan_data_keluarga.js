@@ -36,7 +36,7 @@ async function get_data_keluarga(id_nama_keluarga) {
         "JOIN tingkatan_jemaat t ON (j.id_tingkatan=t.id_tingkatan) " +
         "JOIN pendidikan pen ON (j.id_pendidikan=pen.id_pendidikan) " +
         "JOIN kelompok ke ON (j.id_kelompok=ke.id_kelompok) " +
-        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) WHERE j.id_kepala = ?";
+        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) WHERE j.id_kepala = ? AND j.status_data='Diterima'";
       db.query(queryJemaat, id_nama_keluarga, (error, listjemaat) => {
         if (error) {
           reject(error);
@@ -101,7 +101,7 @@ async function get_data_keluarga_ALL() {
         "JOIN tingkatan_jemaat t ON (j.id_tingkatan=t.id_tingkatan) " +
         "JOIN pendidikan pen ON (j.id_pendidikan=pen.id_pendidikan) " +
         "JOIN kelompok ke ON (j.id_kelompok=ke.id_kelompok) " +
-        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) ORDER BY j.id_skeluarga";
+        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) WHERE j.status_data='Diterima' ORDER BY j.id_skeluarga";
       db.query(queryJemaat, (error, listjemaat) => {
         if (error) {
           reject(error);
