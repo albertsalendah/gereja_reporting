@@ -140,7 +140,7 @@ async function total_kepala_keluarga() {
         "JOIN tingkatan_jemaat t ON (j.id_tingkatan=t.id_tingkatan) " +
         "JOIN pendidikan pen ON (j.id_pendidikan=pen.id_pendidikan) " +
         "JOIN kelompok ke ON (j.id_kelompok=ke.id_kelompok) " +
-        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) WHERE j.status_jemaat = 1 AND j.id_skeluarga = 1";
+        "JOIN status_pernikahan sp ON (j.id_nikah=sp.id_nikah) WHERE j.status_jemaat = 1 AND j.id_skeluarga = 2";
       db.query(query, (error, results) => {
         if (error) {
           console.error(error);
